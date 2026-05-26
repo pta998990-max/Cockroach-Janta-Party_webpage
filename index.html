@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <link rel="icon" href="ChatGPT Image May 21, 2026, 12_27_20 PM.png" type="image/x-icon"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJP | The Swarm Chronicle</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <link rel="stylesheet" href="stylle.css">
+</head>
+
+<body>
+
+    <div class="ticker-wrap">
+        <div class="ticker-move">
+            COCKROACH JANTA PARTY • EDITION: GEN Z & UNEMPLOYED • TEMP: IDEAL FOR
+            CRAWLING • JOIN THE SWARM •
+        </div>
+    </div>
+
+    <header>
+        <div class="platform-hub">THE OFFICIAL CJP PLATFORM & NEWS HUB</div>
+        <h1 class="main-title">Cockroach Janta Party</h1>
+        <div class="hindi-title">कॉकरोच जनता पार्टी (CJP)</div>
+        <div class="sub-header">"They step on us, we publish anyway."</div>
+        <div class="meta-info">
+            <span>EDITION: GEN Z & UNEMPLOYED</span>
+            <span id="live-date">LOADING DATE...</span>
+            <span>PRICE: 0.00 CRUMBS</span>
+        </div>
+    </header>
+
+    <nav>
+        <div class="hamburger" onclick="toggleMobileNav()">MENU ☰</div>
+        <div class="nav-links" id="navContainer">
+            <span class="nav-item active" onclick="switchTab('home')">Front Page</span>
+            <span class="nav-item" onclick="switchTab('complications')">Complications</span>
+            <span class="nav-item" onclick="switchTab('join')">Join Swarm</span>
+            <span class="nav-item" onclick="switchTab('faq')">FAQs</span>
+            <span class="nav-item" onclick="switchTab('suggestions')">Your Suggestions</span>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="main-col">
+
+            <main id="home" class="tab-content active">
+                <div class="glass-card" style="text-align: center;">
+                    <div class="sidebar-title">The Official Colony Count</div>
+                    <div class="counter-big" id="memberCount">0</div>
+                    <p>VERIFIED SWARM MEMBERS REGISTERED GLOBALLY</p>
+                </div>
+
+                <div class="glass-card">
+                    <h2>★ A PARTY FOR THE LAZY AND CHRONICALLY ONLINE 🪳</h2>
+                    <hr style="margin: 15px 0;">
+                    <p><strong>About us:</strong> The Cockroach Janata Party (abbreviated as CJP) is an India political
+                        movement which aims to hold the fascist ruling government accountable and be a political front
+                        aimed at the youth of the country- the Generation Z, who are often called “lazy” and
+                        “chronically online”.</p>
+                </div>
+            </main>
+
+            <main id="complications" class="tab-content">
+                <div class="glass-card">
+                    <h2>★ SYSTEM COMPLICATIONS</h2>
+                    <!-- <h2>★ SYSTEM COMPLICATIONS</h2> -->
+                    <div class="list-item"><strong>ISSUE #01:</strong> Corruption.</div>
+                    <div class="list-item"><strong>ISSUE #02:</strong> Paper leaks.</div>
+                    <div class="list-item"><strong>ISSUE #03:</strong> Jobless growth.</div>
+                    <div class="list-item"><strong>ISSUE #04:</strong> Wealth inequality.</div>
+                    <div class="list-item"><strong>ISSUE #05:</strong> Environmental crisis.</div>
+                    <div class="list-item"><strong>ISSUE #06:</strong> Healthcare barriers.</div>
+                    <div class="list-item"><strong>ISSUE #07:</strong> Education quality.</div>
+                    <div class="list-item"><strong>ISSUE #08:</strong> Social inequality.</div>
+
+                </div>
+            </main>
+
+            <main id="join" class="tab-content">
+                <div class="glass-card">
+                    <h2>ENLIST IN THE SWARM</h2>
+                    <p style="margin-bottom: 20px;">Complete your induction papers below.</p>
+                    <iframe class="form-frame" src="https://forms.gle/Bt49mfcU8n8ZTecbA">Loading…</iframe>
+                    <button class="action-btn" style="margin-top: 20px;" onclick="registerSwarmMember()">I Have
+                        Submitted My
+                        Papers</button>
+                </div>
+            </main>
+
+            <main id="faq" class="tab-content">
+                <div class="glass-card">
+                    <h2>FREQUENTLY ASKED CRAWLS</h2>
+                    <div class="list-item">
+                        <h4>What is CJP?</h4>
+                        <p>It is a viral, tongue-in-cheek socio-political internet movement that satirizes traditional political entities.</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>Are we a real political party?</h4>
+                        <p>No. We are not a real political party.</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>How can I join?</h4>
+                        <p>By registering through the "Join Swarm" tab and completing the induction form.</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>Are we affiliated with Abhijeet Dipke?</h4>
+                        <p>No. We are not affiliated with any political party or individual.</p>
+                    </div>
+                </div>
+            </main>
+
+            <main id="suggestions" class="tab-content">
+                <div class="glass-card">
+                    <h2>LETTERS TO THE COMMAND</h2>
+                    <iframe class="form-frame" src="https://forms.gle/FfpaMmc1sJMR6Q5c6" frameborder="0"
+                        marginheight="0" marginwidth="0">Loading…</iframe>
+                </div>
+            </main>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-box">
+                <div class="sidebar-title">Quick Links</div>
+                <button class="action-btn" style="margin-bottom:10px; background: #27ae60;">Donate Crumbs</button>
+                <button class="action-btn"
+                    style="margin-bottom:10px; background: #fff; color: #000; border: 1px solid #000;">Share
+                    Page</button>
+                <button class="action-btn" style="background: #c0392b;">Backup Channels</button>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">Weather Report</div>
+                <p>TEMP: IDEAL FOR CRAWLING</p>
+                <p>HUMIDITY: 85% (PERFECT)</p>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">Classifieds</div>
+                <p><em>WANTED:</em> Skilled rant-writers for the weekly chronicle. Compensation in virtual sugar.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. FIREBASE SETUP ---
+        const firebaseConfig = {
+            apiKey: "AIzaSyBHEdzRMVIfIGBVpk_Xa68bp89Fwj-Xx_U",
+            authDomain: "cjp--website.firebaseapp.com",
+            projectId: "cjp--website",
+            storageBucket: "cjp--website.firebasestorage.app",
+            messagingSenderId: "992156241084",
+            appId: "1:992156241084:web:a4d787d9fb2ae7500194b9",
+            databaseURL: "https://cjp--website-default-rtdb.firebaseio.com"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database().ref('swarmCount');
+
+        // --- 2. GLOBAL COUNTER LISTENER ---
+        db.on('value', (snapshot) => {
+            const count = snapshot.val() || 0;
+            const counterElement = document.getElementById('memberCount');
+            if (counterElement) {
+                counterElement.innerText = count.toLocaleString();
+            }
+        });
+
+        // --- 3. REGISTER FUNCTION ---
+        function registerSwarmMember() {
+            db.transaction((currentCount) => {
+                return (currentCount || 0) + 1;
+            }).then(() => {
+                alert("Verification Success. Welcome to the global swarm.");
+                switchTab('home');
+            }).catch((error) => {
+                console.error("Update failed: ", error);
+                alert("Registration failed. Please check your internet connection.");
+            });
+        }
+
+        // --- 4. NAVIGATION LOGIC ---
+        function switchTab(id) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            const targetTab = document.getElementById(id);
+            if (targetTab) targetTab.classList.add('active');
+
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            const activeNav = Array.from(document.querySelectorAll('.nav-item'))
+                .find(item => item.getAttribute('onclick').includes(id));
+            if (activeNav) activeNav.classList.add('active');
+
+            const navContainer = document.getElementById('navContainer');
+            if (navContainer) navContainer.classList.remove('mobile-show');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileNav() {
+            const navContainer = document.getElementById('navContainer');
+            if (navContainer) {
+                navContainer.classList.toggle('mobile-show');
+            }
+        }
+
+        // --- 5. LIVE DATE LOGIC ---
+        // FIX: Moved this outside of the toggleMobileNav function so it runs automatically!
+        function updateClock() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            let dateStr = now.toLocaleDateString('en-US', options).toUpperCase();
+
+            const dateDisplay = document.getElementById('live-date');
+            if (dateDisplay) {
+                dateDisplay.innerText = dateStr;
+            }
+        }
+
+        // Run immediately, then check every minute
+        updateClock();
+        setInterval(updateClock, 60000);
+    </script>
+</body>
+
+</html>
